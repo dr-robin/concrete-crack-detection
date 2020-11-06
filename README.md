@@ -1,11 +1,34 @@
-SDNET2018 is an image dataset that contains annotations for cracked and non-cracked concrete structures (bridge decks, walls, and pavement).
+# Concrete-crack-detection
 
-The data is organized in three subdirectories:
+This is model for concrete crack detection using Tensor Flow. The base-model was Inception v3. For transfer learning, I added a feature detection layer and a classification layer to train on concrete wall images from the SDNET2018 dataset which reached an accuracy of 80% after 8 epochesm training was automatically stoped when the loss did not improve between 2 consecutive epoches. For fine-tuning, I retrained the last 100 layers of the Inception v3 model, which resulted in an accuracy of 90% on the test dataset, with minimal additional training.
 
-D contains bridge deck images
-P contains pavement images
-W contains wall images
-Each of these subdirectories contains two additional prefixed subdirectories:
+## Dataset
+The model is trained using the SDNET2018 dataset which is open-source. The directory W contains wall images, C is the prefix used for cracked surfaces and U is the prefix used for uncracked surfaces. The dataset can be downloaded from the link below.
 
-C is the prefix used for cracked surfaces
-U is the prefix used for uncracked surfaces
+```python
+curl https://digitalcommons.usu.edu/cgi/viewcontent.cgi?filename=2&article=1047&context=all_datasets&type=additional
+
+## Installation
+
+To run the jupyter notebook use pip to install the requirements.txt. The code was written using Tensorflow v2.
+
+```bash
+pip install requirements.txt
+```
+
+## Usage
+
+```python
+cd concrete-crack-detection
+jupyter notebook
+```
+
+## Saved model
+The trained model is in the ./model directory and saved in the .tflite format due to limited github space.
+
+## Deployment
+The model can be deployed on google cloud as a REST-api using the AI prediction platform, using the free tier.
+
+```python
+https://cloud.google.com/ai-platform/prediction/docs/deploying-models
+```
