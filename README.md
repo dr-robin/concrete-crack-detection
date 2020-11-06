@@ -1,6 +1,6 @@
 # Concrete-crack-detection
 
-This is model for concrete crack detection using Tensor Flow. The base-model was Inception v3. For transfer learning, I added a feature detection layer and a classification layer to train on concrete wall images from the SDNET2018 dataset which reached an accuracy of 80% after 8 epochesm training was automatically stoped when the loss did not improve between 2 consecutive epoches. For fine-tuning, I retrained the last 100 layers of the Inception v3 model, which resulted in an accuracy of 90% on the test dataset, with minimal additional training.
+This is deep learning model for concrete crack detection using Tensor Flow. The base-model was Inception v3 (https://keras.io/api/applications/inceptionv3/). For transfer learning, I added a feature detection layer and a classification layer to train on concrete wall images from the SDNET2018 dataset which reached an accuracy of 80% after 8 epochesm training was automatically stoped when the loss did not improve between 2 consecutive epoches. For fine-tuning, I retrained the last 100 layers of the Inception v3 model, which resulted in an accuracy of 90% on the test dataset, with minimal additional training.
 
 ## Dataset
 The model is trained using the SDNET2018 dataset which is open-source. The directory W contains wall images, C is the prefix used for cracked surfaces and U is the prefix used for uncracked surfaces. The dataset can be downloaded from the link below.
