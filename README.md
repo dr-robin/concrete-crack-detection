@@ -32,3 +32,6 @@ The model can be deployed on google cloud as a REST-api using the AI prediction 
 ```python
 https://cloud.google.com/ai-platform/prediction/docs/deploying-models
 ```
+
+## Additional
+After detecting cracks with the model, I did some additional exploration of ways to assess crack dimension using tools in the skimage library. You can find these also in jupyter notebook. Canny edge detection and OTSU threshold were both promising ways to simply segment the pixels containing a crack.
